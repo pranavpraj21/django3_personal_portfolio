@@ -1,0 +1,29 @@
+{% extends 'portfolio/base.html' %}
+
+{% block content %}
+    {% load static %}
+
+
+    <div class="container text-center">
+    <img src = "{% static 'portfolio/03.jpg' %}" height = 480  >
+    <br>
+    <br>
+    <h1>Barbara is the leading models in Sports Illustrated and most reputable model  </h1>
+    <br>
+    <br>
+
+    </div>
+    <div class="container text-left">
+    <h1 style ="color:#1F85DE">Portfolios</h1>
+    {%for project in  Projects %}
+    <h4>{{project.title}}</h4>
+    <p>{{project.description}}</p>
+    {% if project.url %}
+    <a href = {{project.url}}>
+      {% endif %}
+    <img src = "{{project.image.url}}" height = 250 >
+    </a>
+
+    {% endfor %}
+    </div>
+  {% endblock %}

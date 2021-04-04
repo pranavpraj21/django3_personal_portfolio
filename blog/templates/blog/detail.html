@@ -1,0 +1,9 @@
+{% extends 'portfolio/base.html' %}
+
+{% block content %}
+
+<h2>{{Blog.title}}</h2>
+<h3 style="color:DodgerBlue">{{Blog.date|date:'d / M / y'|upper }}</h3>
+{{Blog.description|safe}}
+
+{% endblock %}
